@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for logos -->
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <button id="loginTab" class="active" onclick="showForm('loginForm')">Log In</button>
+            <button id="signupTab" onclick="showForm('signupForm')">Sign Up</button>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="loginForm">
+            <h2>Log In</h2>
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <div class="error" id="loginUsernameError">Username is required</div>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <div class="error" id="loginPasswordError">Password is required</div>
+            <input type="submit" value="Log In">
+            
+            <div class="social-login">
+                <p>Or login with</p>
+                <div class="social-buttons">
+                    <button class="social-btn fb"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    <button class="social-btn google"><i class="fab fa-google"></i> Google</button>
+                </div>
+            </div>
+            <div class="form-footer">
+                <p>Don't have an account? <a href="#" onclick="showForm('signupForm')">Create one</a></p>
+            </div>
+        </form>
+        
+        <!-- Signup Form -->
+        <form id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <div class="error" id="signupUsernameError">Username is required</div>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <div class="error" id="signupPasswordError">Password is required</div>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <div class="error" id="confirmPasswordError">Passwords do not match</div>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
